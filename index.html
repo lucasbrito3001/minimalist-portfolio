@@ -6,12 +6,21 @@
 		<title>Portfolio Web</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"rel="stylesheet"/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+			rel="stylesheet"
+		/>
 		<style>
 			:root {
 				--bg: rgb(0, 255, 157);
 				--bgTransparent: rgba(0, 0, 0, 0.1);
 				--fg: #e5e7eb;
+			}
+
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
 			}
 
 			html,
@@ -43,7 +52,10 @@
 				text-align: center;
 				scroll-snap-align: start;
 				background-color: black;
-				background-image: radial-gradient(#35353571 1px, transparent 1px);
+			}
+
+			section.dotted {
+				background-image: radial-gradient(#2525256e 1px, transparent 1px);
 				background-size: 5px 5px;
 			}
 
@@ -61,14 +73,16 @@
 
 			h2 {
 				font-size: 2rem;
-			}
-
-			.subtitle {
-				font-weight: 100;
+				margin-bottom: 1rem;
 			}
 
 			h3 {
 				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.subtitle {
+				font-weight: 100;
 			}
 
 			.highlight {
@@ -77,14 +91,29 @@
 
 			p {
 				max-width: 900px;
-				font-size: 1.125rem;
+				font-size: 1.2rem;
 				line-height: 1.6;
+				margin-bottom: 0.5rem;
+			}
+
+			a {
+				text-decoration: underline wavy var(--bg);
+				color: var(--fg);
+			}
+
+			.muted {
+				color: gray;
 			}
 
 			ul {
 				list-style-position: inside;
 				margin: 0;
 				padding: 0;
+				line-height: 1.6;
+			}
+
+			ul li {
+				font-size: 1.2rem;
 			}
 
 			.skills {
@@ -132,6 +161,10 @@
 
 			.skills .badge:not(.group):hover {
 				border-color: transparent;
+			}
+
+			.contacts {
+				list-style: none;
 			}
 
 			.hint {
@@ -198,18 +231,28 @@
 				h1 {
 					font-size: 3rem;
 				}
+
+				section {
+					text-align: start;
+					align-items: start;
+					padding: 2rem;
+				}
+
+				.skills {
+					justify-content: start;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<div class="snap-container">
-			<section id="apresentacao">
+			<section id="apresentacao" class="dotted">
 				<h2 class="typewriter highlight">Lucas de Brito</h2>
 				<h1 class="">Software Engineer & SRE</h1>
 			</section>
 
 			<section>
-				<h3>A little bit <span class="highlight">about me</span></h3>
+				<h2>A little bit <span class="highlight">about me</span></h2>
 				<p>
 					Hi! I'm a Software Engineer with nearly 5 years of IT experience, dedicated to
 					software development and DevOps culture in high-performance environments. I work
@@ -219,7 +262,7 @@
 				</p>
 			</section>
 
-			<section id="career">
+			<section id="career" class="dotted">
 				<h2>My career</h2>
 				<p>
 					A journey through the key
@@ -227,9 +270,10 @@
 				</p>
 			</section>
 
-			<section id="meli">
+			<section id="meli" class="dotted">
 				<h3>Mercado Livre Brasil</h3>
-				<p class="jobname"><strong>Software Engineer</strong> (Aug 2025 - now)</p>
+				<p class="jobname"><strong>Software Engineer</strong></p>
+				<p>(Aug 2025 - now)</p>
 				<ul>
 					<li>
 						Current position at the
@@ -242,9 +286,10 @@
 				</ul>
 			</section>
 
-			<section id="trademaster-sr">
+			<section id="trademaster-sr" class="dotted">
 				<h3>Trademaster</h3>
-				<p class="jobname"><strong>Sr. DevOps Engineer</strong> (Nov 2024 - Aug 2025)</p>
+				<p class="jobname"><strong>Sr. DevOps Engineer</strong></p>
+				<p>(Nov 2024 - Aug 2025)</p>
 				<ul>
 					<li>
 						Optimized cloud infrastructure architecture, achieving over
@@ -262,9 +307,10 @@
 				</ul>
 			</section>
 
-			<section id="trademaster">
+			<section id="trademaster" class="dotted">
 				<h3>Trademaster</h3>
-				<p class="jobname"><strong>DevOps Engineer</strong> (Jun 2023 - Nov 2024)</p>
+				<p class="jobname"><strong>DevOps Engineer</strong></p>
+				<p>(Jun 2023 - Nov 2024)</p>
 				<ul>
 					<li>
 						Maintained and provisioned infrastructure in Google Cloud Platform (GCP).
@@ -287,11 +333,10 @@
 				</ul>
 			</section>
 
-			<section id="cbyk">
+			<section id="cbyk" class="dotted">
 				<h3>CBYK (New Space)</h3>
-				<p class="jobname">
-					<strong>Desenvolvedor Full Stack</strong> (Oct 2022 - May 2023)<br />
-				</p>
+				<p class="jobname"><strong>Desenvolvedor Full Stack</strong></p>
+				<p>(Oct 2022 - May 2023)</p>
 				<ul>
 					<li>
 						Developed and maintained a full stack web application using React, Node, and
@@ -308,9 +353,10 @@
 				</ul>
 			</section>
 
-			<section id="lexartlabs-arch">
+			<section id="lexartlabs-arch" class="dotted">
 				<h3>Lexart Labs</h3>
-				<p><strong>Jr. Software Architect</strong> (Mar 2022 - Sep 2022)</p>
+				<p class="jobname"><strong>Jr. Software Architect</strong></p>
+				<p>(Mar 2022 - Sep 2022)</p>
 				<ul>
 					<li>Managed projects, servers and deploys</li>
 					<li>Helped beginners improve their programming skills.</li>
@@ -322,9 +368,10 @@
 				</ul>
 			</section>
 
-			<section id="lexartlabs">
+			<section id="lexartlabs" class="dotted">
 				<h3>Lexart Labs</h3>
-				<p><strong>Full Stack Developer</strong> (Dec 2021 - Feb 2022)</p>
+				<p class="jobname"><strong>Full Stack Developer</strong></p>
+				<p>(Dec 2021 - Feb 2022)</p>
 				<ul>
 					<li>
 						Developed and maintained web applications of various types, such as
@@ -333,28 +380,28 @@
 				</ul>
 			</section>
 
-			<section id="academic">
-				<h3>My academic background</h3>
+			<section id="academic" class="dotted">
+				<h2>My academic background</h2>
 				<p>Educational basis that founded my technical career</p>
 			</section>
 
-			<section id="bachelor">
+			<section id="bachelor" class="dotted">
 				<h3>Control and Automation Engineering</h3>
-				<p>UTFPR - Universidade Tecnológica Federal do Paraná</p>
+				<p class="jobname">UTFPR - Universidade Tecnológica Federal do Paraná</p>
 				<p>2018 - 2020 (unfinished)</p>
 				<p>
-					I did the first 2 years of graduation. The time I spent at university was very
-					important for me, I learned a lot about calculus, physics, chemistry and
-					programming, knowledge that helped me a lot to improve the logical reasoning. In
-					addition, the contact with people from different cultures gave me important
-					knowledge about diversity, empathy and communication that changed my life!
+					I did the first 2 years of graduation. During those years, I learned a lot about
+					calculus, physics and programming, knowledge that helped me a lot to improve the
+					logical reasoning. In addition, the contact with people from different cultures
+					gave me important knowledge about diversity, empathy and communication that
+					changed my life!
 				</p>
 			</section>
 
-			<section id="skills">
-				<h3>My <span class="highlight">hard skills</span></h3>
+			<section id="skills" class="dotted primary">
+				<h2>My <span class="highlight">hard skills</span></h2>
 				<ul class="skills">
-					<li class="badge group">Cloud Providers -></li>
+					<li class="badge group">Cloud -></li>
 					<li class="badge highlight">GCP</li>
 					<li class="badge">AWS</li>
 					<li class="badge group">Computing -></li>
@@ -364,24 +411,19 @@
 					<li class="badge group">CI/CD -></li>
 					<li class="badge highlight">GitHub Actions</li>
 					<li class="badge">Jenkins</li>
-					<li class="badge group">Containerization -></li>
+					<li class="badge group">Container -></li>
 					<li class="badge highlight">Docker</li>
 					<li class="badge">Docker compose</li>
 					<li class="badge group">IaC -></li>
 					<li class="badge">Terraform</li>
 					<li class="badge">Ansible</li>
 					<li class="badge">Helm</li>
-					<li class="badge group">Programming languages -></li>
+					<li class="badge group">Programming -></li>
 					<li class="badge highlight">TypeScript</li>
 					<li class="badge">Golang</li>
 					<li class="badge">Shell Script</li>
 					<li class="badge">Python</li>
 					<li class="badge">JavaScript</li>
-					<li class="badge group">Network -></li>
-					<li class="badge">VPC</li>
-					<li class="badge">VPN Tunnels</li>
-					<li class="badge">Firewall</li>
-					<li class="badge">CIDR</li>
 					<li class="badge group">Observability -></li>
 					<li class="badge">Grafana Stack</li>
 					<li class="badge">OpenTelemetry</li>
@@ -399,11 +441,47 @@
 				</ul>
 			</section>
 
-			<section id="languages">
-				<h3>Languages</h3>
+			<section id="languages" class="dotted">
+				<h2>Languages</h2>
 				<p>English - Intermediate (B2)</p>
 				<p>Spanish - Advanced</p>
 				<p>Portuguese - Native</p>
+			</section>
+
+			<section id="contacts" class="dotted">
+				<h2>My location</h2>
+				<p class="muted">Santo André - SP</p>
+
+				<h2>Contacts</h2>
+				<!-- <ul class="contacts">
+					<li>
+						<span class="muted">email</span><br />
+						devlucasmail@gmail.com
+					</li>
+					<li>
+						<span class="muted">whatsapp</span><br />
+						+55 (18) 99735-1747
+					</li>
+				</ul> -->
+				<p>
+					<span class="muted">email</span><br />
+					devlucasmail@gmail.com
+				</p>
+				<p>
+					<span class="muted">whatsapp</span><br />
+					+55 (18) 99735-1747
+				</p>
+				<p>
+					<span class="muted">linkedin</span><br />
+					<a href="https://linkedin.com/in/lucasdbritodev" target="_blank">lucasdbritodev</a>
+				</p>
+				<p>
+					<span class="muted">github</span><br />
+					<a href="https://github.com/lucasbrito3001" target="_blank">lucasbrito3001</a>
+				</p>
+
+				<h2>Downloads</h2>
+				<p class="muted"><a href="resume.pdf" download="Lucas de Brito - Software Engineer.pdf" >Resume</a></p>
 			</section>
 		</div>
 
