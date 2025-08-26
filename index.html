@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Portfolio Web</title>
+		<style>
+			:root {
+				--bg: rgb(0, 255, 157);
+				--bgTransparent: rgba(0, 0, 0, 0.1);
+				--fg: #e5e7eb;
+			}
+
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+
+			body {
+				font-family: Fira Code, Ubuntu;
+				color: var(--fg);
+				background: black;
+			}
+
+			.snap-container {
+				height: 100vh;
+				overflow-y: scroll;
+				scroll-snap-type: y mandatory;
+				scroll-behavior: smooth;
+			}
+
+			section {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 1rem;
+				text-align: center;
+				scroll-snap-align: start;
+				background-color: black;
+				background-image: radial-gradient(#35353571 1px, transparent 1px);
+				background-size: 5px 5px;
+			}
+
+			section ul,
+			section p {
+				max-width: 968px;
+			}
+
+			h1 {
+				font-size: 5rem;
+				margin-bottom: 1rem;
+				text-shadow: 0 0 10px #ffffff5d;
+				margin: 0;
+			}
+
+			h2 {
+				font-size: 2rem;
+			}
+
+			.subtitle {
+				font-weight: 100;
+			}
+
+			h3 {
+				font-size: 1.5rem;
+			}
+
+			.highlight {
+				color: var(--bg);
+			}
+
+			p {
+				max-width: 900px;
+				font-size: 1.125rem;
+				line-height: 1.6;
+			}
+
+			ul {
+				list-style-position: inside;
+				margin: 0;
+				padding: 0;
+			}
+
+			.skills {
+				list-style: none;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 0.5rem;
+			}
+
+			.skills .badge {
+				position: relative;
+				overflow: hidden;
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 4px;
+				padding: 0.4rem 0.9rem;
+				font-size: 0.9rem;
+				font-weight: 500;
+				white-space: nowrap;
+				transition: all 0.1s ease;
+				cursor: default;
+				z-index: 0;
+			}
+
+			.skills .badge.group {
+				background: var(--bgTransparent);
+			}
+
+			.skills .badge::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.233);
+				z-index: -1;
+				transition: left 0.2s ease;
+			}
+
+			.skills .badge:not(.group):hover::before {
+				left: 0;
+			}
+
+			.skills .badge:not(.group):hover {
+				border-color: transparent;
+			}
+
+			.hint {
+				position: fixed;
+				bottom: 1rem;
+				width: 100vw;
+				text-align: center;
+				font-size: 0.875rem;
+				opacity: 0.7;
+				user-select: none;
+				pointer-events: none;
+				animation: float 3s ease-in-out infinite;
+			}
+
+			@keyframes float {
+				0% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-4px);
+				}
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			.typewriter {
+				display: inline-block;
+				font-family: "Courier New", monospace;
+				white-space: nowrap;
+				overflow: hidden;
+				border-right: 0.12em solid rgba(255, 255, 255, 0.85);
+				box-sizing: content-box;
+				width: 0;
+				animation: typing var(--typing-duration, 1.5s) steps(var(--chars, 20), end) forwards,
+					blink 0.75s step-end infinite;
+				color: inherit;
+			}
+
+			@keyframes typing {
+				from {
+					width: 0;
+				}
+				to {
+					width: var(--w, 14ch);
+				}
+			}
+
+			@keyframes blink {
+				50% {
+					border-color: transparent;
+				}
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.typewriter {
+					animation: none;
+					width: var(--w, 24ch);
+					border-right: none;
+				}
+			}
+
+			@media (max-width: 768px) {
+				h1 {
+					font-size: 3rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="snap-container">
+			<section id="apresentacao">
+				<h2 class="typewriter highlight">Lucas de Brito</h2>
+				<h1 class="">Software Engineer & SRE</h1>
+			</section>
+
+			<section>
+				<h3>A little bit <span class="highlight">about me</span></h3>
+				<p>
+					Hi! I'm a Software Engineer with nearly 5 years of IT experience, dedicated to
+					software development and DevOps culture in high-performance environments. I work
+					extensively in distributed systems, infrastructure automation, CI/CD,
+					observability and reliability engineering (SRE), with a focus on cloud
+					environments (GCP and AWS) and Kubernetes.
+				</p>
+			</section>
+
+			<section id="career">
+				<h2>My career</h2>
+				<p>
+					A journey through the key
+					<span class="highlight">companies and projects</span> that shaped my career
+				</p>
+			</section>
+
+			<section id="meli">
+				<h3>Mercado Livre Brasil</h3>
+				<p class="jobname"><strong>Software Engineer</strong> (Aug 2025 - now)</p>
+				<ul>
+					<li>
+						Current position at the
+						<span class="highlight">largest e-commerce company in Latin America.</span>
+					</li>
+					<li>
+						Working on the development of an infrastructure platform in the cloud
+						computing area.
+					</li>
+				</ul>
+			</section>
+
+			<section id="trademaster-sr">
+				<h3>Trademaster</h3>
+				<p class="jobname"><strong>Sr. DevOps Engineer</strong> (Nov 2024 - Aug 2025)</p>
+				<ul>
+					<li>
+						Optimized cloud infrastructure architecture, achieving over
+						<span class="highlight">25% cost savings</span>.
+					</li>
+					<li>
+						Measured hardware resource usage and associated costs to implement new
+						projects.
+					</li>
+					<li>
+						Identified strategic approaches for implementing new projects and
+						migrations.
+					</li>
+					<li>Assisted partners with technical issues.</li>
+				</ul>
+			</section>
+
+			<section id="trademaster">
+				<h3>Trademaster</h3>
+				<p class="jobname"><strong>DevOps Engineer</strong> (Jun 2023 - Nov 2024)</p>
+				<ul>
+					<li>
+						Maintained and provisioned infrastructure in Google Cloud Platform (GCP).
+					</li>
+					<li>
+						Automated routine tasks using Python and Shell Script, streamlining
+						operational processes.
+					</li>
+					<li>
+						Configured and monitored Kubernetes clusters, ensuring scalability and high
+						availability.
+					</li>
+					<li>
+						Developed and maintained CI/CD pipelines with GitHub Actions and Jenkins,
+						accelerating delivery workflows.
+					</li>
+					<li>
+						Resolved issues and optimized processes, improving operational efficiency.
+					</li>
+				</ul>
+			</section>
+
+			<section id="cbyk">
+				<h3>CBYK (New Space)</h3>
+				<p class="jobname">
+					<strong>Desenvolvedor Full Stack</strong> (Oct 2022 - May 2023)<br />
+				</p>
+				<ul>
+					<li>
+						Developed and maintained a full stack web application using React, Node, and
+						SQL Server.
+					</li>
+					<li>
+						Managed database interactions, with a continuous focus on enhancing
+						performance.
+					</li>
+					<li>
+						Built various types and formats of reports, leveraging advanced Node
+						concepts to improve process agility.
+					</li>
+				</ul>
+			</section>
+
+			<section id="lexartlabs-arch">
+				<h3>Lexart Labs</h3>
+				<p><strong>Jr. Software Architect</strong> (Mar 2022 - Sep 2022)</p>
+				<ul>
+					<li>Managed projects, servers and deploys</li>
+					<li>Helped beginners improve their programming skills.</li>
+					<li>Assisted co-workers with technical issues and business rules.</li>
+					<li>
+						Developed and maintained full stack web applications using Vue.js, Node.js,
+						and MySQL.
+					</li>
+				</ul>
+			</section>
+
+			<section id="lexartlabs">
+				<h3>Lexart Labs</h3>
+				<p><strong>Full Stack Developer</strong> (Dec 2021 - Feb 2022)</p>
+				<ul>
+					<li>
+						Developed and maintained web applications of various types, such as
+						financial control and people management.
+					</li>
+				</ul>
+			</section>
+
+			<section id="academic">
+				<h3>My academic background</h3>
+				<p>Educational basis that founded my technical career</p>
+			</section>
+
+			<section id="bachelor">
+				<h3>Control and Automation Engineering</h3>
+				<p>UTFPR - Universidade Tecnológica Federal do Paraná</p>
+				<p>2018 - 2020 (unfinished)</p>
+				<p>
+					I did the first 2 years of graduation. The time I spent at university was very
+					important for me, I learned a lot about calculus, physics, chemistry and
+					programming, knowledge that helped me a lot to improve the logical reasoning. In
+					addition, the contact with people from different cultures gave me important
+					knowledge about diversity, empathy and communication that changed my life!
+				</p>
+			</section>
+
+			<section id="skills">
+				<h3>My <span class="highlight">hard skills</span></h3>
+				<ul class="skills">
+					<li class="badge group">Cloud Providers -></li>
+					<li class="badge highlight">GCP</li>
+					<li class="badge">AWS</li>
+					<li class="badge group">Computing -></li>
+					<li class="badge highlight">Kubernetes</li>
+					<li class="badge highlight">Linux servers</li>
+					<li class="badge">Windows server</li>
+					<li class="badge group">CI/CD -></li>
+					<li class="badge highlight">GitHub Actions</li>
+					<li class="badge">Jenkins</li>
+					<li class="badge group">Containerization -></li>
+					<li class="badge highlight">Docker</li>
+					<li class="badge">Docker compose</li>
+					<li class="badge group">IaC -></li>
+					<li class="badge">Terraform</li>
+					<li class="badge">Ansible</li>
+					<li class="badge">Helm</li>
+					<li class="badge group">Programming languages -></li>
+					<li class="badge highlight">TypeScript</li>
+					<li class="badge">Golang</li>
+					<li class="badge">Shell Script</li>
+					<li class="badge">Python</li>
+					<li class="badge">JavaScript</li>
+					<li class="badge group">Network -></li>
+					<li class="badge">VPC</li>
+					<li class="badge">VPN</li>
+					<li class="badge">VPN Tunnels</li>
+					<li class="badge">Network security</li>
+					<li class="badge">CIDR</li>
+					<li class="badge group">Observability -></li>
+					<li class="badge">Grafana</li>
+					<li class="badge">Tempo</li>
+					<li class="badge">Promtail</li>
+					<li class="badge">OpenTelemetry</li>
+					<li class="badge">Kibana</li>
+					<li class="badge">Elastic Beats</li>
+					<li class="badge">Datadog</li>
+					<li class="badge group">Messaging -></li>
+					<li class="badge">RabbitMQ</li>
+					<li class="badge">Kafka</li>
+					<li class="badge group">SQL -></li>
+					<li class="badge">PostgreSQL</li>
+					<li class="badge">MySQL</li>
+					<li class="badge">SQL Server</li>
+					<li class="badge group">NoSQL -></li>
+					<li class="badge">Elasticsearch</li>
+				</ul>
+			</section>
+
+			<section id="languages">
+				<h3>Languages</h3>
+				<p>English - Intermediate (B2)</p>
+				<p>Spanish - Advanced</p>
+				<p>Portuguese - Native</p>
+			</section>
+		</div>
+
+		<div class="hint">Scroll to navigate</div>
+	</body>
+</html>
